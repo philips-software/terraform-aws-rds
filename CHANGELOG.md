@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [1.0.0] - ...
+## [1.0.0] - 2018-06-21
 https://github.com/philips-software/terraform-aws-rds/tags/1.0.0
 
 [Unreleased]: https://github.com/philips-software/terraform-aws-rds/compare/1.0.0...HEAD
