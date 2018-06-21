@@ -7,7 +7,6 @@ It has the following capabilities:
 - settings on the backup window
 - prevents deletion by providing a final snapshot
 - database encryption
-- PostgresSQL as default DB.
 
 ## Usage
 Example usages:
