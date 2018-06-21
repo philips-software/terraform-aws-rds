@@ -14,27 +14,31 @@ Example usages:
 
 ```
 module "db-instance" {
-    source = "git::https://gitlab.ta.philips.com/digilabs-aws-infra/db-instance"
+  source = "philips-software/rds/aws"
+  version = "1.0.0"
 
-    name                    = "mydb"
-    environment             = "${var.environment}"
-    vpc_id                  = "${var.vpc_id}"
-    subnet_ids              = "${var.private_subnet_ids}"
-    name                    = "mydb"
-    username                = "abc"
-    password                = "secret"
-    vpc_private_dns_zone_id = "${var.private_dns_zone_id}"
-    engine                  = "postgres"
-    engine_version          = "9.6.1"
-    port                    = "5432"
+  # Or via github
+  # source = "github.com/philips-software/terraform-aws-rds?ref=1.0.0"
 
-    // defaults
-    storage_encrypted       = "true"
-    instance_class          = "db.t2.small""
-    allocated_storage       = "10"
-    storage_type            = "gp2"
-    retention               = "7"
-    skip_final_snapshot     = "false"
+  name                    = "mydb"
+  environment             = "${var.environment}"
+  vpc_id                  = "${var.vpc_id}"
+  subnet_ids              = "${var.private_subnet_ids}"
+  name                    = "mydb"
+  username                = "abc"
+  password                = "secret"
+  vpc_private_dns_zone_id = "${var.private_dns_zone_id}"
+  engine                  = "postgres"
+  engine_version          = "9.6.1"
+  port                    = "5432"
+
+  // defaults
+  storage_encrypted       = "true"
+  instance_class          = "db.t2.small""
+  allocated_storage       = "10"
+  storage_type            = "gp2"
+  retention               = "7"
+  skip_final_snapshot     = "false"
 }
 
 ```
