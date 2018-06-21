@@ -48,7 +48,7 @@ variable "password" {
 
 variable "allocated_storage" {
   type        = "string"
-  description = "(Optiona) The amount of allocated storage. The default is 10GB if not specified"
+  description = "(Optional) The amount of allocated storage. The default is 10GB if not specified"
   default     = "10"
 }
 
