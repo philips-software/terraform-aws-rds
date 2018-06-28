@@ -1,5 +1,5 @@
 resource "aws_db_subnet_group" "rds_subnet_group" {
-  name        = "${var.environment}-${var.name}.dg"
+  name        = "${var.environment}-${var.name}.sg"
   description = "rds subnet group"
 
   subnet_ids = ["${split(",", var.subnet_ids)}"]
