@@ -62,7 +62,7 @@ resource "aws_db_instance" "db" {
 
 resource "aws_route53_record" "db" {
   zone_id = "${var.vpc_private_dns_zone_id}"
-  name    = "db.${var.name}"
+  name    = "db.${var.environment}-${var.name}"
   type    = "CNAME"
   ttl     = "300"
 
