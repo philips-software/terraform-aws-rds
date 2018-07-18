@@ -39,14 +39,15 @@ resource "aws_db_instance" "db" {
   storage_type              = "${var.storage_type}"
   storage_encrypted         = "${var.storage_encrypted}"
   name                      = "${var.name}"
-  final_snapshot_identifier = "${var.environment}-${var.name}-final-snapshot"
-  username                  = "${var.username}"
-  password                  = "${var.password}"
-  skip_final_snapshot       = "${var.skip_final_snapshot}"
-  db_subnet_group_name      = "${aws_db_subnet_group.rds_subnet_group.name}"
-  vpc_security_group_ids    = ["${aws_security_group.db_sg.id}"]
-  backup_retention_period   = "${var.backup_retention_period}"
-  backup_window             = "${var.backup_window}"
+  final_snapshot_identifier = "${var.environment}-${var.name}${var.final_snapshot_identifier_suffix}"
+
+  username                = "${var.username}"
+  password                = "${var.password}"
+  skip_final_snapshot     = "${var.skip_final_snapshot}"
+  db_subnet_group_name    = "${aws_db_subnet_group.rds_subnet_group.name}"
+  vpc_security_group_ids  = ["${aws_security_group.db_sg.id}"]
+  backup_retention_period = "${var.backup_retention_period}"
+  backup_window           = "${var.backup_window}"
 
   tags = "${merge(map("Name", format("%s", "${var.environment}-${var.name}-db-instance")), map("Environment", format("%s", var.environment)), var.tags)}"
 }
