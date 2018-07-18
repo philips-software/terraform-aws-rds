@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+- Removed the unique timestamp for the final snapshot as this results in a change a change on every apply
 
 ## [1.0.0] - 2018-06-21
 https://github.com/philips-software/terraform-aws-rds/tags/1.0.0

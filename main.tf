@@ -30,15 +30,6 @@ resource "aws_security_group_rule" "allow_all" {
   security_group_id = "${aws_security_group.db_sg.id}"
 }
 
-resource "random_id" "timestamp" {
-  keepers = {
-    # Generate a new id each time we switch to a new AMI id
-    ami_id = "${timestamp()}"
-  }
-
-  byte_length = 8
-}
-
 resource "aws_db_instance" "db" {
   identifier                = "${var.environment}-${var.name}"
   allocated_storage         = "${var.allocated_storage}"
@@ -48,7 +39,7 @@ resource "aws_db_instance" "db" {
   storage_type              = "${var.storage_type}"
   storage_encrypted         = "${var.storage_encrypted}"
   name                      = "${var.name}"
-  final_snapshot_identifier = "${var.environment}-${var.name}-final-${random_id.timestamp.hex}"
+  final_snapshot_identifier = "${var.environment}-${var.name}-final-snapshot"
   username                  = "${var.username}"
   password                  = "${var.password}"
   skip_final_snapshot       = "${var.skip_final_snapshot}"
