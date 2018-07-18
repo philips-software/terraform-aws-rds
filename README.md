@@ -67,10 +67,10 @@ module "db-instance" {
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| endpoint | The actual endpoint for the database. |
-| fqdn | he private DNS record for the database. |
+| Name     | Description                             |
+|----------|-----------------------------------------|
+| endpoint | The actual endpoint for the database.   |
+| fqdn     | he private DNS record for the database. |
 
 
 
