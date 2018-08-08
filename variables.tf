@@ -87,6 +87,12 @@ variable "skip_final_snapshot" {
   default     = "false"
 }
 
+variable "final_snapshot_identifier_suffix" {
+  type        = "string"
+  description = "Suffix for the final snapshot, makes it possible to add custom snapshot identifiers"
+  default     = "-final-snapshot"
+}
+
 variable "tags" {
   type        = "map"
   description = "A map of tags to add to the resources"
