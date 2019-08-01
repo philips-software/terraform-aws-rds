@@ -1,100 +1,104 @@
 variable "environment" {
-  type        = "string"
   description = "Name of the environment (e.g. digilabs-projextX-dev); will be prefixed to all resources"
+  type        = string
 }
 
 variable "name" {
-  type        = "string"
   description = "Name of the database instance"
+  type        = string
 }
 
 variable "vpc_id" {
-  type        = "string"
   description = "The VPC to launch the instance in (e.g. vpc-66ecaa02)"
+  type        = string
 }
 
-variable "vpc_private_dns_zone_id" {}
+variable "vpc_private_dns_zone_id" {
+  description = "Creates a route 53 entry for the private zone."
+  type        = string
+}
 
 variable "subnet_ids" {
-  type        = "string"
   description = "IDs of the subnets, seperated by a ,"
+  type        = string
 }
 
 variable "engine" {
-  type        = "string"
   description = "The database engine to use"
+  type        = string
 }
 
 variable "engine_version" {
-  type        = "string"
   description = "The database engine_version"
+  type        = string
 }
 
 variable "instance_class" {
-  type        = "string"
   description = "The instance type of the RDS instance. The default is 'db.t2.small' to allow encryption. The micro versions cannot be encrypted"
+  type        = string
   default     = "db.t2.small"
 }
 
 variable "username" {
-  type        = "string"
   description = "The database username"
+  type        = string
 }
 
 variable "password" {
-  type        = "string"
   description = "The database password"
+  type        = string
 }
 
 variable "allocated_storage" {
-  type        = "string"
   description = "(Optional) The amount of allocated storage. The default is 10GB if not specified"
-  default     = "10"
+  type        = number
+  default     = 10
 }
 
 variable "port" {
-  type        = "string"
   description = "The database port"
+  type        = number
 }
 
 variable "storage_type" {
-  type        = "string"
   description = "(Optional) One of 'standard' (magnetic), 'gp2' (general purpose SSD), or 'io1' (provisioned IOPS SSD). The default is 'gp2' if not specified."
+  type        = string
   default     = "gp2"
 }
 
 variable "storage_encrypted" {
-  type        = "string"
   description = "(Optional) Specifies whether the DB instance is encrypted. The default is false if not specified."
-  default     = "true"
+  type        = bool
+  default     = true
 }
 
 variable "backup_retention_period" {
-  type        = "string"
   description = "(Optional) Automatically keep backups for point-in-time recovery for XX days(1-35). When providing '0' as a value backups will be disabled.The default is 14 if not specified."
-  default     = "7"
+  type        = number
+  default     = 7
 }
 
 variable "backup_window" {
-  type        = "string"
   description = "(Optional) The daily time range (in UTC) during which automated backups are created if they are enabled. Example: '09:46-10:16'. Must not overlap with maintenance_window. The default is '00:00-02:00' if not specified"
+  type        = string
   default     = "00:00-02:00"
 }
 
 variable "skip_final_snapshot" {
-  type        = "string"
   description = "(Optional) Determines whether a final DB snapshot is created before the DB instance is deleted. If true is specified, no DBSnapshot is created. If false is specified, a DB snapshot is created before the DB instance is deleted, using the value from final_snapshot_identifier. Default is false."
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "final_snapshot_identifier_suffix" {
-  type        = "string"
   description = "Suffix for the final snapshot, makes it possible to add custom snapshot identifiers"
+  type        = string
   default     = "-final-snapshot"
 }
 
 variable "tags" {
-  type        = "map"
   description = "A map of tags to add to the resources"
+  type        = map(string)
   default     = {}
 }
+
