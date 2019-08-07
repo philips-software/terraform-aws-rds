@@ -56,7 +56,7 @@ module "db" {
 | skip\_final\_snapshot | (Optional) Determines whether a final DB snapshot is created before the DB instance is deleted. If true is specified, no DBSnapshot is created. If false is specified, a DB snapshot is created before the DB instance is deleted, using the value from final_snapshot_identifier. Default is false. | bool | `"false"` | no |
 | storage\_encrypted | (Optional) Specifies whether the DB instance is encrypted. The default is false if not specified. | bool | `"true"` | no |
 | storage\_type | (Optional) One of 'standard' (magnetic), 'gp2' (general purpose SSD), or 'io1' (provisioned IOPS SSD). The default is 'gp2' if not specified. | string | `"gp2"` | no |
-| subnet\_ids | IDs of the subnets, seperated by a , | string | n/a | yes |
+| subnet\_ids | IDs of the subnets, seperated by a , | list | n/a | yes |
 | tags | A map of tags to add to the resources | map(string) | `<map>` | no |
 | username | The database username | string | n/a | yes |
 | vpc\_id | The VPC to launch the instance in (e.g. vpc-66ecaa02) | string | n/a | yes |

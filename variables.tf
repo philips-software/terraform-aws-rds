@@ -20,7 +20,7 @@ variable "vpc_private_dns_zone_id" {
 
 variable "subnet_ids" {
   description = "IDs of the subnets, seperated by a ,"
-  type        = string
+  type        = list
 }
 
 variable "engine" {
