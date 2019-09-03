@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.0] - 2019-09-03
+- Upgrade to Terraform 0.12
+- Add github actions
+
 ## [1.1.0] - 2018-08-08
 - Updated the Terraform version in the .terraform-version file (tfenv)
 - Added default provider region to postgres example
@@ -15,5 +19,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [1.0.0] - 2018-06-21
 https://github.com/philips-software/terraform-aws-rds/tags/1.0.0
 
-[Unreleased]: https://github.com/philips-software/terraform-aws-rds/compare/1.1.0...HEAD
+[Unreleased]: https://github.com/philips-software/terraform-aws-rds/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/philips-software/terraform-aws-rds/compare/1.1.0...2.0.0
 [1.1.0]: https://github.com/philips-software/terraform-aws-rds/compare/1.0.0...1.1.0
