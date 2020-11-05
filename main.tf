@@ -57,6 +57,10 @@ resource "aws_db_instance" "db" {
   name                      = var.name
   final_snapshot_identifier = "${var.environment}-${var.name}${var.final_snapshot_identifier_suffix}"
 
+  allow_major_version_upgrade = var.allow_major_version_upgrade
+  apply_immediately           = var.apply_immediately
+  auto_minor_version_upgrade  = var.auto_minor_version_upgrade
+
   username                = var.username
   password                = var.password
   skip_final_snapshot     = var.skip_final_snapshot

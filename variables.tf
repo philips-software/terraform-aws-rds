@@ -102,3 +102,20 @@ variable "tags" {
   default     = {}
 }
 
+variable "allow_major_version_upgrade" {
+  description = "(Optional) Indicates that major version upgrades are allowed. Changing this parameter does not result in an outage and the change is asynchronously applied as soon as possible."
+  type        = bool
+  default     = false
+}
+
+variable "apply_immediately" {
+  description = "(Optional) Specifies whether any database modifications are applied immediately, or during the next maintenance window. Default is false. See Amazon RDS Documentation for more information."
+  type        = bool
+  default     = false
+}
+
+variable "auto_minor_version_upgrade" {
+  description = "(Optional) Indicates that minor engine upgrades will be applied automatically to the DB instance during the maintenance window. Defaults to true."
+  type        = bool
+  default     = true
+}
